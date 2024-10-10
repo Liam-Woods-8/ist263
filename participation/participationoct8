@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Participation October 8th 2024 Liam Woods</title>
+        <style>
+            body {
+                background-image: url("SYRACUSE_BlockS_ORANGE_RGB.jpg");
+                background-repeat: repeat-x;
+                background-repeat: repeat-y;
+            }
+            p {
+                background-color: #0A1080;
+                padding: 10px;
+                border: 2px solid #DAD9DE;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            I bleed orange.
+        </p>
+    </body>
+
+</html> 

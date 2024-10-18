@@ -1,0 +1,32 @@
+body { 
+    background-color: #10375C;
+    color: #F4F6FF;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+h1, h2 {
+    color: #F3C623;
+}
+
+a,
+nav a {
+    color: #E2F1E7; 
+    text-decoration: none; 
+}
+
+a:visited {
+    color: #DBD3D3; 
+}
+
+a:hover,
+nav a:hover {
+    color: #FEFFA7; 
+}
+
+nav {
+    background-image: url("webbackground.jpeg"); 
+    background-color: #10375C;
+    background-size: cover; 
+    padding: 10px;
+    margin-bottom: 30px;
+}

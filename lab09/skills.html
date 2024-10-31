@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>Skills</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -21,13 +25,11 @@
         color: #000;
       }
 
-      /* Centering main heading */
       h1 {
         text-align: center;
         margin-top: 20px;
       }
 
-      /* Flexbox for main layout */
       .container {
         display: flex;
         justify-content: space-between;
@@ -44,10 +46,11 @@
         text-align: center;
       }
 
-      .skills-flexbox img {
-        width: 50px;
+      .skills-flexbox i {
+        font-size: 50px;
+        color: #333;
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 10px;
       }
 
       .aside {
@@ -62,7 +65,6 @@
         text-align: center;
       }
 
-      /* Spacing for intro text */
       .intro {
         text-align: center;
         margin: 20px;
@@ -89,24 +91,24 @@
     <div class="container">
       <div class="skills-flexbox">
         <div>
-          <img src="path/to/html-icon.png" alt="HTML Icon" />
+          <i class="fa-brands fa-html5"></i>
           <p>HTML</p>
         </div>
         <div>
-          <img src="path/to/css-icon.png" alt="CSS Icon" />
+          <i class="fa-brands fa-css3-alt"></i>
           <p>CSS</p>
         </div>
         <div>
-          <img src="path/to/javascript-icon.png" alt="JavaScript Icon" />
+          <i class="fa-brands fa-js"></i>
           <p>JavaScript</p>
         </div>
         <div>
-          <img src="path/to/python-icon.png" alt="Python Icon" />
+          <i class="fa-brands fa-python"></i>
           <p>Python</p>
         </div>
         <div>
-          <img src="path/to/coldfusion-icon.png" alt="ColdFusion Icon" />
-          <p>ColdFusion</p>
+          <i class="fa-solid fa-network-wired"></i>
+          <p>Cloud & Network Management</p>
         </div>
       </div>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact Information</title>
+    <style>
+      body {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+      }
+      .column {
+        flex: 1;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .row1 .column1 {
+        background-color: #f0f8ff;
+      }
+      .row1 .column2 {
+        background-color: #e6ffe6;
+      }
+      .row2 .column1 {
+        background-color: #fff0f5;
+      }
+      .row2 .column2 {
+        background-color: #f5f5f0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a> | <a href="skills.html">Skills</a> |
+      <a href="contact.html">Contact</a> |
+    </nav>
+    <h1>Contact</h1>
+
+    <div class="container">
+      <div class="row row1">
+        <div class="column column1">
+          <p>Liam Woods, 27 Chestnut Street, Apt 2A, Ridgewood, NJ 07450</p>
+        </div>
+        <div class="column column2">
+          <a
+            href="https://www.linkedin.com/in/liamantoniowoods/"
+            target="_blank"
+          >
+            <img
+              src="GitHub/ist263/images/LinkedIn-Logos/LI-In-Bug.png"
+              alt="LinkedIn profile link for Liam Woods"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/liamantoniowoods/"
+            target="_blank"
+            >My LinkedIn Profile</a
+          >
+          <a href="mailto:lwoods02@syr.edu">Liam Woods Email</a>
+        </div>
+      </div>
+
+      <div class="row row2">
+        <div class="column column1">
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+        <div class="column column2">
+          <p>Location information can go here if needed.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

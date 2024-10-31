@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Liam Woods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         margin: 20px;
@@ -31,6 +32,11 @@
         width: 60%;
         border: 5px solid #4d567a;
         border-radius: 8px;
+      }
+
+      .responsive-img {
+        max-width: 100%;
+        height: auto;
       }
 
       main {
@@ -70,7 +76,11 @@
     </nav>
 
     <header>
-      <img src="../images/bio-banner.jpg" alt="Liam Woods Banner" />
+      <img
+        class="responsive-img"
+        src="../images/bio-banner.jpg"
+        alt="Liam Woods Banner"
+      />
     </header>
 
     <main>

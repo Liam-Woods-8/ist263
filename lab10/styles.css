@@ -1,5 +1,5 @@
 body { 
-    background-color: #10375C;
+    background-color: #b1b4b5;
     color: #F4F6FF;
     font-family: Copperplate, Papyrus, fantasy;
 }
@@ -10,7 +10,7 @@ h1, h2 {
 
 a,
 nav a {
-    color: #E2F1E7; 
+    color: #E2F1E7;
     text-decoration: none; 
 }
 
@@ -24,11 +24,32 @@ nav a:hover {
 }
 
 nav {
-    background-image: url("webbackground.jpeg"); 
     background-color: #10375C;
+    background-image: url("webbackground.jpeg"); 
     background-size: cover; 
     padding: 10px;
     margin-bottom: 30px;
+}
+
+.container {
+    background-color: #988cd4;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.column {
+    background-color: #988cd4;
+    border-radius: 8px;
+    color: #fff;
+}
+
+button {
+    background-color: #a3b5f0;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #988cd4;
 }
 
 @media (max-width: 768px) {

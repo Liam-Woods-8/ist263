@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Slideshow</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #111111;
+        color: #ffffff;
+        text-align: center;
+        margin: 0;
+      }
+      #slideshow-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #000000;
+        border-radius: 10px;
+      }
+      #bigimages img {
+        display: none;
+        width: 100%;
+        border-radius: 10px;
+      }
+      #planetinfo {
+        margin-top: 20px;
+      }
+      .active {
+        display: block;
+      }
+      #thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      #thumbnails img {
+        width: 100px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid #444;
+      }
+      #thumbnails img:hover {
+        border-color: #0fccce;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slideshow-container">
+      <div id="bigimages">
+        <img src="mercury.jpg" alt="Mercury" id="mercury" class="active" />
+        <img src="venus.jpg" alt="Venus" id="venus" />
+        <img src="earth.jpg" alt="Earth" id="earth" />
+        <img src="mars.jpg" alt="Mars" id="mars" />
+        <img src="jupiter.jpg" alt="Jupiter" id="jupiter" />
+        <img src="saturn.jpg" alt="Saturn" id="saturn" />
+        <img src="uranus.jpg" alt="Uranus" id="uranus" />
+        <img src="neptune.jpg" alt="Neptune" id="neptune" />
+      </div>
+      <div id="planetinfo">
+        <h1 id="planet-name">Mercury</h1>
+        <p id="planet-description">
+          Mercury is the smallest and innermost planet in the Solar System. Its
+          orbit around the Sun takes 87.97 Earth days, the shortest of all the
+          planets in the Solar System. It is named after the Roman god Mercury,
+          messenger of the gods.
+        </p>
+      </div>
+      <div id="thumbnails">
+        <img src="mercury.jpg" alt="Mercury" onclick="showPlanet('mercury')" />
+        <img src="venus.jpg" alt="Venus" onclick="showPlanet('venus')" />
+        <img src="earth.jpg" alt="Earth" onclick="showPlanet('earth')" />
+        <img src="mars.jpg" alt="Mars" onclick="showPlanet('mars')" />
+        <img src="jupiter.jpg" alt="Jupiter" onclick="showPlanet('jupiter')" />
+        <img src="saturn.jpg" alt="Saturn" onclick="showPlanet('saturn')" />
+        <img src="uranus.jpg" alt="Uranus" onclick="showPlanet('uranus')" />
+        <img src="neptune.jpg" alt="Neptune" onclick="showPlanet('neptune')" />
+      </div>
+    </div>
+
+    <script>
+      const planets = {
+        mercury: {
+          name: "Mercury",
+          description:
+            "Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the planets in the Solar System. It is named after the Roman god Mercury, messenger of the gods.",
+        },
+        venus: {
+          name: "Venus",
+          description:
+            "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. It is the hottest planet in the Solar System due to its thick, toxic atmosphere.",
+        },
+        earth: {
+          name: "Earth",
+          description:
+            "Earth is the third planet from the Sun and the only known planet to harbor life. It has diverse ecosystems and water covers approximately 71% of its surface.",
+        },
+        mars: {
+          name: "Mars",
+          description:
+            "Mars is known as the Red Planet due to its reddish appearance. It is the fourth planet from the Sun and has the tallest volcano and the deepest canyon in the Solar System.",
+        },
+        jupiter: {
+          name: "Jupiter",
+          description:
+            "Jupiter is the largest planet in the Solar System. It is a gas giant with a Great Red Spot, which is a massive storm persisting for centuries.",
+        },
+        saturn: {
+          name: "Saturn",
+          description:
+            "Saturn is the sixth planet from the Sun, known for its stunning ring system made primarily of ice particles. It is the second largest planet in the Solar System.",
+        },
+        uranus: {
+          name: "Uranus",
+          description:
+            "Uranus is the seventh planet from the Sun and is unique for rotating on its side. It has a blue-green color due to methane in its atmosphere.",
+        },
+        neptune: {
+          name: "Neptune",
+          description:
+            "Neptune is the eighth and farthest known planet from the Sun. It is known for its deep blue color and strong winds, the fastest in the Solar System.",
+        },
+      };
+
+      function showPlanet(planetId) {
+        const images = document.querySelectorAll("#bigimages img");
+        images.forEach((img) => img.classList.remove("active"));
+        document.getElementById(planetId).classList.add("active");
+
+        document.getElementById("planet-name").textContent =
+          planets[planetId].name;
+        document.getElementById("planet-description").textContent =
+          planets[planetId].description;
+      }
+    </script>
+  </body>
+</html>

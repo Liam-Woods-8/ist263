@@ -1,140 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planet Slideshow</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lab 12 Slideshow</title>
     <style>
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         background-color: #111111;
         color: #ffffff;
-        text-align: center;
-        margin: 0;
       }
       #slideshow-container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
         background-color: #000000;
-        border-radius: 10px;
+        width: 1200px;
+        margin: auto;
       }
-      #bigimages img {
-        display: none;
-        width: 100%;
-        border-radius: 10px;
+      #bigimages {
+        margin-right: 100px;
       }
       #planetinfo {
-        margin-top: 20px;
-      }
-      .active {
-        display: block;
+        padding: 100px;
       }
       #thumbnails {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
+        width: 840px;
+        margin: auto;
+        padding-top: 20px;
       }
-      #thumbnails img {
+      #mercurythumb,
+      #venusthumb,
+      #earththumb,
+      #marsthumb,
+      #jupiterthumb,
+      #saturnthumb,
+      #uranusthumb,
+      #neptunethumb {
         width: 100px;
-        cursor: pointer;
-        border-radius: 5px;
-        border: 2px solid #444;
       }
-      #thumbnails img:hover {
-        border-color: #0fccce;
+      .planet-image,
+      .planet-text {
+        display: none;
+      }
+      .planet-text {
+        float: left;
+        width: 50%;
+      }
+      .planet-image {
+        float: right;
+        width: 50%;
       }
     </style>
+    <script type="text/javascript">
+      function PlanetsOff() {
+        document.getElementById("mercury").style.display = "none";
+        document.getElementById("venus").style.display = "none";
+        document.getElementById("earth").style.display = "none";
+        document.getElementById("mars").style.display = "none";
+        document.getElementById("jupiter").style.display = "none";
+        document.getElementById("saturn").style.display = "none";
+        document.getElementById("uranus").style.display = "none";
+        document.getElementById("neptune").style.display = "none";
+
+        document.getElementById("mercurytext").style.display = "none";
+        document.getElementById("venustext").style.display = "none";
+        document.getElementById("earthtext").style.display = "none";
+        document.getElementById("marstext").style.display = "none";
+        document.getElementById("jupitertext").style.display = "none";
+        document.getElementById("saturntext").style.display = "none";
+        document.getElementById("uranustext").style.display = "none";
+        document.getElementById("neptunetext").style.display = "none";
+      }
+
+      function MercuryOn() {
+        document.getElementById("mercury").style.display = "block";
+        document.getElementById("mercurytext").style.display = "block";
+      }
+
+      function VenusOn() {
+        document.getElementById("venus").style.display = "block";
+        document.getElementById("venustext").style.display = "block";
+      }
+
+      function EarthOn() {
+        document.getElementById("earth").style.display = "block";
+        document.getElementById("earthtext").style.display = "block";
+      }
+
+      function MarsOn() {
+        document.getElementById("mars").style.display = "block";
+        document.getElementById("marstext").style.display = "block";
+      }
+
+      function JupiterOn() {
+        document.getElementById("jupiter").style.display = "block";
+        document.getElementById("jupitertext").style.display = "block";
+      }
+
+      function SaturnOn() {
+        document.getElementById("saturn").style.display = "block";
+        document.getElementById("saturntext").style.display = "block";
+      }
+
+      function UranusOn() {
+        document.getElementById("uranus").style.display = "block";
+        document.getElementById("uranustext").style.display = "block";
+      }
+
+      function NeptuneOn() {
+        document.getElementById("neptune").style.display = "block";
+        document.getElementById("neptunetext").style.display = "block";
+      }
+    </script>
   </head>
   <body>
     <div id="slideshow-container">
       <div id="bigimages">
-        <img src="mercury.jpg" alt="Mercury" id="mercury" class="active" />
-        <img src="venus.jpg" alt="Venus" id="venus" />
-        <img src="earth.jpg" alt="Earth" id="earth" />
-        <img src="mars.jpg" alt="Mars" id="mars" />
-        <img src="jupiter.jpg" alt="Jupiter" id="jupiter" />
-        <img src="saturn.jpg" alt="Saturn" id="saturn" />
-        <img src="uranus.jpg" alt="Uranus" id="uranus" />
-        <img src="neptune.jpg" alt="Neptune" id="neptune" />
+        <img
+          id="mercury"
+          class="planet-image"
+          src="mercury.jpg"
+          alt="Mercury"
+        />
+        <img id="venus" class="planet-image" src="venus.jpg" alt="Venus" />
+        <img id="earth" class="planet-image" src="earth.jpg" alt="Earth" />
+        <img id="mars" class="planet-image" src="mars.jpg" alt="Mars" />
+        <img
+          id="jupiter"
+          class="planet-image"
+          src="jupiter.jpg"
+          alt="Jupiter"
+        />
+        <img id="saturn" class="planet-image" src="saturn.jpg" alt="Saturn" />
+        <img id="uranus" class="planet-image" src="uranus.jpg" alt="Uranus" />
+        <img
+          id="neptune"
+          class="planet-image"
+          src="neptune.jpg"
+          alt="Neptune"
+        />
       </div>
+
       <div id="planetinfo">
-        <h1 id="planet-name">Mercury</h1>
-        <p id="planet-description">
-          Mercury is the smallest and innermost planet in the Solar System. Its
-          orbit around the Sun takes 87.97 Earth days, the shortest of all the
-          planets in the Solar System. It is named after the Roman god Mercury,
-          messenger of the gods.
-        </p>
+        <div id="mercurytext" class="planet-text">Mercury details...</div>
+        <div id="venustext" class="planet-text">Venus details...</div>
+        <div id="earthtext" class="planet-text">Earth details...</div>
+        <div id="marstext" class="planet-text">Mars details...</div>
+        <div id="jupitertext" class="planet-text">Jupiter details...</div>
+        <div id="saturntext" class="planet-text">Saturn details...</div>
+        <div id="uranustext" class="planet-text">Uranus details...</div>
+        <div id="neptunetext" class="planet-text">Neptune details...</div>
       </div>
+
       <div id="thumbnails">
-        <img src="mercury.jpg" alt="Mercury" onclick="showPlanet('mercury')" />
-        <img src="venus.jpg" alt="Venus" onclick="showPlanet('venus')" />
-        <img src="earth.jpg" alt="Earth" onclick="showPlanet('earth')" />
-        <img src="mars.jpg" alt="Mars" onclick="showPlanet('mars')" />
-        <img src="jupiter.jpg" alt="Jupiter" onclick="showPlanet('jupiter')" />
-        <img src="saturn.jpg" alt="Saturn" onclick="showPlanet('saturn')" />
-        <img src="uranus.jpg" alt="Uranus" onclick="showPlanet('uranus')" />
-        <img src="neptune.jpg" alt="Neptune" onclick="showPlanet('neptune')" />
+        <img
+          id="mercurythumb"
+          src="mercury_thumb.jpg"
+          alt="Mercury Thumbnail"
+          onclick="PlanetsOff(); MercuryOn();"
+        />
+        <img
+          id="venusthumb"
+          src="venus_thumb.jpg"
+          alt="Venus Thumbnail"
+          onclick="PlanetsOff(); VenusOn();"
+        />
+        <img
+          id="earththumb"
+          src="earth_thumb.jpg"
+          alt="Earth Thumbnail"
+          onclick="PlanetsOff(); EarthOn();"
+        />
+        <img
+          id="marsthumb"
+          src="mars_thumb.jpg"
+          alt="Mars Thumbnail"
+          onclick="PlanetsOff(); MarsOn();"
+        />
+        <img
+          id="jupiterthumb"
+          src="jupiter_thumb.jpg"
+          alt="Jupiter Thumbnail"
+          onclick="PlanetsOff(); JupiterOn();"
+        />
+        <img
+          id="saturnthumb"
+          src="saturn_thumb.jpg"
+          alt="Saturn Thumbnail"
+          onclick="PlanetsOff(); SaturnOn();"
+        />
+        <img
+          id="uranusthumb"
+          src="uranus_thumb.jpg"
+          alt="Uranus Thumbnail"
+          onclick="PlanetsOff(); UranusOn();"
+        />
+        <img
+          id="neptunethumb"
+          src="neptune_thumb.jpg"
+          alt="Neptune Thumbnail"
+          onclick="PlanetsOff(); NeptuneOn();"
+        />
       </div>
     </div>
-
-    <script>
-      const planets = {
-        mercury: {
-          name: "Mercury",
-          description:
-            "Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the planets in the Solar System. It is named after the Roman god Mercury, messenger of the gods.",
-        },
-        venus: {
-          name: "Venus",
-          description:
-            "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. It is the hottest planet in the Solar System due to its thick, toxic atmosphere.",
-        },
-        earth: {
-          name: "Earth",
-          description:
-            "Earth is the third planet from the Sun and the only known planet to harbor life. It has diverse ecosystems and water covers approximately 71% of its surface.",
-        },
-        mars: {
-          name: "Mars",
-          description:
-            "Mars is known as the Red Planet due to its reddish appearance. It is the fourth planet from the Sun and has the tallest volcano and the deepest canyon in the Solar System.",
-        },
-        jupiter: {
-          name: "Jupiter",
-          description:
-            "Jupiter is the largest planet in the Solar System. It is a gas giant with a Great Red Spot, which is a massive storm persisting for centuries.",
-        },
-        saturn: {
-          name: "Saturn",
-          description:
-            "Saturn is the sixth planet from the Sun, known for its stunning ring system made primarily of ice particles. It is the second largest planet in the Solar System.",
-        },
-        uranus: {
-          name: "Uranus",
-          description:
-            "Uranus is the seventh planet from the Sun and is unique for rotating on its side. It has a blue-green color due to methane in its atmosphere.",
-        },
-        neptune: {
-          name: "Neptune",
-          description:
-            "Neptune is the eighth and farthest known planet from the Sun. It is known for its deep blue color and strong winds, the fastest in the Solar System.",
-        },
-      };
-
-      function showPlanet(planetId) {
-        const images = document.querySelectorAll("#bigimages img");
-        images.forEach((img) => img.classList.remove("active"));
-        document.getElementById(planetId).classList.add("active");
-
-        document.getElementById("planet-name").textContent =
-          planets[planetId].name;
-        document.getElementById("planet-description").textContent =
-          planets[planetId].description;
-      }
-    </script>
   </body>
 </html>

@@ -9,6 +9,8 @@
         font-family: Copperplate, Papyrus, fantasy;
         background-image: url("contactpagebackground.jpg");
         background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
         margin: 0;
         padding: 0;
         color: white;
@@ -40,6 +42,11 @@
         border-radius: 10px;
         padding: 10px;
         border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: gray;
       }
 
       main {
@@ -103,6 +110,16 @@
 
       button:hover {
         background-color: #e08618;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        color: gray;
       }
 
       @media (max-width: 768px) {

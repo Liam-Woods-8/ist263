@@ -24,14 +24,8 @@
         position: sticky;
         top: 0;
         background: rgba(0, 0, 0, 0.7);
-        transition: all 0.3s ease-in-out;
         z-index: 1000;
-      }
-
-      header.minimized {
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.9);
-        font-size: 0.9em;
+        transition: top 0.3s ease;
       }
 
       header div {
@@ -101,11 +95,10 @@
       input,
       textarea {
         margin-bottom: 10px;
-        padding: 10px;
+        padding: 8px;
         border: 1px solid #ccc;
         border-radius: 5px;
         width: 100%;
-        box-sizing: border-box;
       }
 
       button {
@@ -129,16 +122,6 @@
       a:hover,
       a:focus {
         color: gray;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.7);
-        font-size: 0.9em;
-        opacity: 0;
-        animation: fadeIn 2s forwards;
       }
 
       @media (max-width: 768px) {
@@ -166,6 +149,19 @@
         .contact-info-container {
           padding: 15px;
         }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .linkedin-logo:hover {
+        animation: spin 2s linear infinite;
       }
     </style>
   </head>
@@ -206,6 +202,7 @@
               alt="LinkedIn Logo"
               width="20"
               style="vertical-align: middle"
+              class="linkedin-logo"
             />
             <a
               href="https://www.linkedin.com/in/liamantoniowoods/"
@@ -249,29 +246,17 @@
 
     <script>
       let lastScrollTop = 0;
-      const header = document.querySelector("header");
-
-      window.addEventListener("scroll", () => {
-        let scrollTop =
+      window.addEventListener("scroll", function () {
+        let header = document.querySelector("header");
+        let currentScroll =
           window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-          header.classList.add("minimized");
-        } else {
-          header.classList.remove("minimized");
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      });
 
-      let timeout;
-      window.addEventListener("mousemove", (e) => {
-        if (e.clientY <= 10) {
-          clearTimeout(timeout);
-          header.classList.remove("minimized");
+        if (currentScroll > lastScrollTop) {
+          header.style.top = "-80px";
+        } else {
+          header.style.top = "0";
         }
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-          header.classList.add("minimized");
-        }, 1000);
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
       });
     </script>
   </body>

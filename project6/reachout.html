@@ -14,17 +14,6 @@
         margin: 0;
         padding: 0;
         color: white;
-        animation: backgroundMove 30s infinite linear;
-        transition: all 0.3s ease;
-      }
-
-      @keyframes backgroundMove {
-        0% {
-          background-position: center top;
-        }
-        100% {
-          background-position: center bottom;
-        }
       }
 
       header {
@@ -35,6 +24,14 @@
         position: sticky;
         top: 0;
         background: rgba(0, 0, 0, 0.7);
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      header.minimized {
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        font-size: 0.9em;
       }
 
       header div {
@@ -134,11 +131,6 @@
         color: gray;
       }
 
-      img:hover {
-        transform: rotate(360deg);
-        transition: transform 0.5s ease;
-      }
-
       footer {
         text-align: center;
         margin-top: 20px;
@@ -147,16 +139,6 @@
         font-size: 0.9em;
         opacity: 0;
         animation: fadeIn 2s forwards;
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-
-      * {
-        transition: all 0.3s ease;
       }
 
       @media (max-width: 768px) {
@@ -264,5 +246,33 @@
         remember this: you haven't" - Thomas A. Edison
       </p>
     </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          header.classList.add("minimized");
+        } else {
+          header.classList.remove("minimized");
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+
+      let timeout;
+      window.addEventListener("mousemove", (e) => {
+        if (e.clientY <= 10) {
+          clearTimeout(timeout);
+          header.classList.remove("minimized");
+        }
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          header.classList.add("minimized");
+        }, 1000);
+      });
+    </script>
   </body>
 </html>

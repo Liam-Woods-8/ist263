@@ -228,28 +228,44 @@
 
       <section>
         <h2>Contact Form</h2>
-        <form action="https://formspree.io/f/mqakpyvr" method="POST">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mqakpyvr"
+          method="POST"
+        >
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
           <label for="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
-          <button type="submit">Send</button>
+          <button type="submit" id="send-button">Send</button>
+          <p
+            id="thank-you-message"
+            style="display: none; color: white; text-align: center"
+          >
+            Thank you! Your message has been sent.
+          </p>
         </form>
-        <p
-          id="form-success"
-          style="display: none; color: green; text-align: center"
-        >
-          Thank you! Your message has been sent.
-        </p>
+
         <script>
-          document
-            .querySelector("form")
-            .addEventListener("submit", function (event) {
-              event.preventDefault();
-              document.getElementById("form-success").style.display = "block";
-            });
+          const form = document.getElementById("contact-form");
+          const sendButton = document.getElementById("send-button");
+          const thankYouMessage = document.getElementById("thank-you-message");
+
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            sendButton.style.display = "none";
+            thankYouMessage.style.display = "block";
+
+            form.reset();
+
+            setTimeout(() => {
+              thankYouMessage.style.display = "none";
+              sendButton.style.display = "inline-block";
+            }, 5000);
+          });
         </script>
       </section>
 

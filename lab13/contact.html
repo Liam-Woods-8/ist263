@@ -4,13 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Information</title>
-    <link rel="stylesheet" href="../ist263/lab10/styles.css" />
     <style>
       body {
         margin: 1.25em;
         font-family: Arial, sans-serif;
-        background-color: #b1b4b5;
-        color: #333;
+        background-color: #909497;
+        color: #222222;
       }
 
       nav {
@@ -21,17 +20,17 @@
       nav a {
         margin: 0 0.5em;
         text-decoration: none;
-        color: #333;
+        color: #222222;
       }
 
       nav a:hover,
       nav a:focus {
         color: #ffa500;
-        text-shadow: 0 0 10px #ffa500, 0 0 20px #ff8c00;
+        text-shadow: 0 0 5px #ffa500, 0 0 10px #cc7a00;
       }
 
       h1 {
-        color: #a3b5f0;
+        color: #ffffff;
         text-align: center;
       }
 
@@ -51,8 +50,8 @@
         flex: 1;
         padding: 1.25em;
         border-radius: 8px;
-        background-color: #988cd4;
-        color: #fff;
+        background-color: #6c63ac;
+        color: #ffffff;
       }
 
       form {
@@ -61,32 +60,43 @@
         gap: 0.625em;
       }
 
-      label,
-      input,
-      textarea,
-      button {
-        color: #333;
+      label {
+        color: #222222;
       }
 
       input,
       textarea {
         padding: 0.625em;
-        border: 1px solid #a3b5f0;
+        border: 1px solid #4a90e2;
         border-radius: 5px;
-        background-color: #fff;
+        background-color: #ffffff;
+        color: #222222;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 2px solid #4a90e2;
       }
 
       button {
         padding: 0.625em;
         border: none;
         border-radius: 5px;
-        background-color: #a3b5f0;
-        color: #fff;
+        background-color: #4a90e2;
+        color: #ffffff;
         cursor: pointer;
       }
 
       button:hover {
-        background-color: #988cd4;
+        background-color: #6c63ac;
+      }
+
+      a {
+        color: #4a90e2;
+      }
+
+      a:hover {
+        color: #222222;
       }
     </style>
   </head>
@@ -119,14 +129,11 @@
             <a
               href="https://www.linkedin.com/in/liamantoniowoods/"
               target="_blank"
-              style="color: #a3b5f0"
               >Visit LinkedIn Profile</a
             >
           </p>
           <p>
-            <a href="mailto:lwoods02@syr.edu" style="color: #a3b5f0"
-              >Contact via Email</a
-            >
+            <a href="mailto:lwoods02@syr.edu">Contact via Email</a>
           </p>
         </div>
       </div>

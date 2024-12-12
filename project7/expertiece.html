@@ -4,29 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Liam Woods Portfolio Skills Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      section h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .language-logos {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .language-logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .section-text {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+      }
+
+      .footer__text {
+        font-size: 14px;
+      }
+    </style>
   </head>
 
-  <body background="ischool.png">
+  <body>
     <header>
-      <div>Liam Woods</div>
-      <nav>
-        <a href="home.html">Home</a>
-        <a href="expertiece.html">Skills</a>
-        <a href="reachout.html">Contact</a>
+      <div class="header__title">Liam Woods</div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="expertiece.html">Skills</a></li>
+          <li><a href="reachout.html">Contact</a></li>
+        </ul>
       </nav>
     </header>
 
     <main>
       <section>
         <h2>Programming Languages</h2>
-        <div>
+        <div class="language-logos">
           <img src="python.png" alt="Python Logo" />
-        </div>
-        <div>
           <img src="html.png" alt="HTML Logo" />
           <img src="css.png" alt="CSS Logo" />
-        </div>
-        <div>
           <img src="javascript.png" alt="JavaScript Logo" />
         </div>
       </section>
@@ -69,10 +149,10 @@
       </section>
     </main>
 
-    <hr />
+    <hr class="divider" />
 
-    <footer>
-      <p>
+    <footer class="footer">
+      <p class="footer__text">
         201-527-0684 | lwoods02@syr.edu | 25 Chestnut St. Ridgewood, NJ, 07450 |
         <a href="#">LinkedIn</a>
       </p>

@@ -43,7 +43,6 @@
         padding: 10px;
       }
 
-      /* Style the navigation link to be underlined when hovered */
       nav a:hover,
       nav a:focus {
         text-decoration: underline;
@@ -57,7 +56,6 @@
       }
 
       .section {
-        /* Create a class for sections to style them collectively */
         margin-bottom: 20px;
         border-radius: 10px;
         background: rgba(0, 0, 0, 0.5);
@@ -65,22 +63,7 @@
         color: white;
       }
 
-      h1,
-      h2,
-      p {
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-
-      p {
-        font-size: 1.1em;
-      }
-
       .profile-info {
-        /* Create a class for the profile section */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -91,18 +74,22 @@
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .profile-info p {
+        text-align: center;
+        max-width: 600px;
       }
 
       footer {
         text-align: center;
-        padding: 10px;
+        padding: 20px;
         background: rgba(0, 0, 0, 0.7);
         color: white;
         border-radius: 10px;
       }
 
-      /* Responsive styles */
       @media (max-width: 768px) {
         header {
           flex-direction: column;
@@ -142,9 +129,26 @@
 
     <main>
       <section class="section profile-info">
+        <img src="headshot.png" alt="Liam Woods Headshot" />
         <h1>Liam Woods</h1>
         <h2>Syracuse University School of Information Studies</h2>
+        <p>
+          Pushing the limits of web design and development through creativity.
+          With a unique blend of technical proficiency, creative flair, and
+          strong communication skills, I work hard to ensure faultless digital
+          experiences that put the needs of my clients first. I’m a Web Design
+          and Management specialist currently enrolled at Syracuse University’s
+          information studies school, and I approach every job with a commitment
+          to excellence.
+        </p>
       </section>
     </main>
+
+    <footer>
+      <p>
+        © 2024 Liam Woods "When you have exhausted all possibilities, remember
+        this: you haven't" - Thomas A. Edison
+      </p>
+    </footer>
   </body>
 </html>

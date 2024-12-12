@@ -76,16 +76,15 @@
 
       .language-logos {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between; /* Space out logos evenly */
         margin-bottom: 20px;
-        width: 80%;
+        width: 90%; /* Increased width of container */
         margin: 0 auto;
       }
 
       .language-logo {
-        width: 20px; /* Reduced image size */
-        height: 20px;
-        margin: 0 10px;
+        width: 40px; /* Adjust logo size */
+        height: 40px;
       }
 
       .section-text {
@@ -119,10 +118,14 @@
       <section>
         <h2>Programming Languages</h2>
         <div class="language-logos">
-          <img src="python.png" alt="Python Logo" />
-          <img src="html.png" alt="HTML Logo" />
-          <img src="css.png" alt="CSS Logo" />
-          <img src="javascript.png" alt="JavaScript Logo" />
+          <img src="python.png" alt="Python Logo" class="language-logo" />
+          <img src="html.png" alt="HTML Logo" class="language-logo" />
+          <img src="css.png" alt="CSS Logo" class="language-logo" />
+          <img
+            src="javascript.png"
+            alt="JavaScript Logo"
+            class="language-logo"
+          />
         </div>
       </section>
 

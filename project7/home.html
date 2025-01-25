@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Liam Woods Portfolio Home Page</title>
     <style>
+      /* Global Styles */
       body {
         font-family: Copperplate, Papyrus, fantasy;
         background-image: url("homebackground.png");
@@ -14,6 +15,16 @@
         margin: 0;
         padding: 0;
         color: white;
+        animation: backgroundAnimation 15s ease infinite;
+      }
+
+      @keyframes backgroundAnimation {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
       }
 
       header {
@@ -24,6 +35,7 @@
         background: rgba(0, 0, 0, 0.7);
         color: white;
         border-radius: 10px;
+        animation: fadeIn 1.5s ease-out;
       }
 
       header div {
@@ -36,7 +48,7 @@
         text-decoration: none;
         font-size: 18px;
         text-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
-        transition: text-shadow 0.3s ease-in-out;
+        transition: all 0.3s ease;
       }
 
       nav {
@@ -51,22 +63,15 @@
         text-decoration: underline;
         color: gray;
         text-shadow: 0 0 10px #ffa500, 0 0 20px #ff8c00, 0 0 30px #ff4500;
+        transform: scale(1.1);
       }
 
+      /* Profile Section */
       main {
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-      }
-
-      .section {
-        margin-bottom: 20px;
-        border-radius: 10px;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        color: white;
-        max-width: 600px;
-        margin: 0 auto;
+        animation: fadeIn 2s ease-out;
       }
 
       .profile-info {
@@ -74,24 +79,104 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
+        opacity: 0;
+        animation: slideUp 1s forwards;
       }
 
       .profile-info img {
-        width: 250px;
-        height: 250px;
+        width: 300px; /* Increased size */
+        height: 300px; /* Increased size */
         border-radius: 50%;
         margin-bottom: 20px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Removed border transition */
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.6); /* Initial box-shadow */
+      }
+
+      /* Hover effect for the profile image */
+      .profile-info img:hover {
+        transform: scale(1.1);
+      }
+
+      .profile-info h1,
+      .profile-info h2 {
+        font-size: 36px; /* Increase font size for better visibility */
+        font-weight: bold; /* Make the text bold */
+        margin: 20px 0;
+        animation: fadeInText 2s ease-out;
+        color: white;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 15px #ff4500,
+          0 0 30px #ff8c00; /* Strong text-shadow with glow */
+      }
+
+      .profile-info h2 {
+        font-size: 28px; /* Slightly smaller size for h2 */
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 20px #ff8c00,
+          0 0 40px white; /* Adjusted for contrast */
       }
 
       .profile-info p {
         text-align: center;
         max-width: 600px;
+        margin-top: 20px; /* Add some space from the title */
+        padding: 15px; /* Add padding around the text */
+        background: rgba(
+          0,
+          0,
+          0,
+          0.6
+        ); /* Semi-transparent black background for better contrast */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size for better readability */
+        line-height: 1.6; /* Adjust line height for better spacing between lines */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a subtle text shadow for better contrast */
+        animation: fadeInText 3s ease-out; /* Fade-in effect */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInText {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       footer {
         text-align: center;
         padding: 20px;
         color: white;
+        animation: glow 1.5s ease-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4500,
+            0 0 40px #ff8c00;
+        }
+        to {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffa500,
+            0 0 40px #ff4500;
+        }
       }
 
       @media (max-width: 768px) {
@@ -109,8 +194,8 @@
         }
 
         .profile-info img {
-          width: 150px;
-          height: 150px;
+          width: 200px; /* Smaller for mobile */
+          height: 200px; /* Smaller for mobile */
         }
 
         body {
